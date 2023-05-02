@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {
+            display:none;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-amber" style="width:25%">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="products.html" class="w3-bar-item w3-button">Products</a>
+        <a href="mailto:tehtarick@gmail.com" class="w3-bar-item w3-button">Contact</a>
+    </div>
+    <div style="margin-left: 25%;">
+        <!-- header -->
+        <div class="w3-container w3-pale-red">
+            <h1>Let&apos;s look at some of our products!</h1>
+        </div>
+        <!-- manual slideshow -->
+        <div class="w3-content w3-display-container">
+            <img src="coffee.jpg" alt="coffee" class="mySlides">
+            <img src="sound.jpg" alt="sound" class="mySlides">
+            <img src="workbench.jpg" alt="workbench" class="mySlides">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <!-- content -->
+        <div class="w3-container w3-sand">
+            <p class="w3-sans-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor nisl molestie, sagittis mi quis, convallis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ligula nunc, fringilla dignissim leo eget, pellentesque consequat felis. Sed aliquet enim accumsan augue finibus, et rhoncus odio vulputate. Donec gravida porta mi, eget tincidunt est feugiat nec. Maecenas sed tincidunt dui, non luctus sapien. Cras nec velit quis lectus pharetra feugiat. Quisque maximus dolor ornare, luctus libero eget, porttitor neque. Suspendisse molestie felis ante, tincidunt gravida metus bibendum et.</p>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
